@@ -2,6 +2,7 @@
 	import NavItem from '$lib/components/NavItem.svelte';
 	import Home from '$lib/icons/Home.svelte';
 	import Info from '$lib/icons/Info.svelte';
+	import Music from '$lib/icons/Music.svelte';
 	import '../app.postcss';
 </script>
 
@@ -17,6 +18,12 @@
 			<NavItem href="/about">
 				<div class="flex gap-2 items-center">
 					<Info />
+					about
+				</div>
+			</NavItem>
+			<NavItem href="/kpop">
+				<div class="flex gap-2 items-center">
+					<Music />
 					about
 				</div>
 			</NavItem>
