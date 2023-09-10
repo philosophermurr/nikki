@@ -97,7 +97,7 @@
 				</div>
 			</div>
 		</div>
-	{:else}
-		<p class="mt-10">Waiting to fetch Discord data...</p>
+	<!-- {:else}
+		<p class="mt-10">Waiting to fetch Discord data...</p> -->
 	{/if}
 </body>
