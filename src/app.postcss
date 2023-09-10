@@ -9,6 +9,10 @@
         font-family: 'SF Pro Text', sans-serif;
         @apply bg-zinc-950 text-white text-xl;
     }
+    body {
+        animation-name: fade-in;
+		animation-duration: 0.7s;
+    }
     nav {
         font-family: 'SF Pro Rounded', sans-serif;
     }
@@ -34,7 +38,19 @@
     h6 {
         @apply text-lg;
     }
+
     .btn {
         @apply rounded-xl hover:bg-rose-500 hover:bg-opacity-20 p-1 px-3 mb-1 transition-all;
     }
+
+    @keyframes fade-in {
+		from {
+			opacity: 0;
+			transform: translateY(0.5rem);
+		}
+		to {
+			opacity: 1;
+			transform: translateY(0);
+		}
+	}
 }
