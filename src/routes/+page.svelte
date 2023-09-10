@@ -3,13 +3,13 @@
 
 	const data = useLanyard({ method: 'ws', id: '569662811853291530' });
 
-	// $: console.log($data);
+	$: console.log($data);
 
 	$: emoji = $data?.activities.find((a) => a.type === 4)?.emoji?.id;
 	$: emojiName = $data?.activities.find((a) => a.type === 4)?.emoji?.name;
 	$: customStatus = $data?.activities.find((a) => a.type === 4)?.state;
 
-	$: app = $data?.activities.find((a) => a.type !== 4)?.name.toLowerCase();
+	$: app = $data?.activities.find((a) => a.type !== 4)?.name?.toLowerCase();
 	$: activity = $data?.activities.find((a) => a.type !== 4)?.details?.toLowerCase();
 	$: details = $data?.activities.find((a) => a.type !== 4)?.state?.toLowerCase();
 
@@ -81,15 +81,17 @@
 							</span>
 						{/if}
 					</div>
-					{#if $data?.activities.find((a) => a.type === 2)}
+					{#if $data?.activities.find((a) => a.type !== 4)}
 						<div class="flex gap-2 items-center">
 							<p class="font-bold">
 								{app}
 							</p>
-							<p>&middot;</p>
-							<p>
-								{activity}
-							</p>
+							{#if activity}
+								<p>&middot;</p>
+								<p>
+									{activity}
+								</p>
+							{/if}
 							<p class="opacity-50">
 								{#if details}
 									{details}
@@ -100,7 +102,7 @@
 				</div>
 			</div>
 		</div>
-	<!-- {:else}
+		<!-- {:else}
 		<p class="mt-10">Waiting to fetch Discord data...</p> -->
 	{/if}
 </body>
