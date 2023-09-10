@@ -5,10 +5,12 @@
 
 	$: console.log($data);
 
+	$: customStatus = $data?.activities.find((a) => a.type === 4);
 	$: emoji = $data?.activities.find((a) => a.type === 4)?.emoji?.id;
 	$: emojiName = $data?.activities.find((a) => a.type === 4)?.emoji?.name;
-	$: customStatus = $data?.activities.find((a) => a.type === 4)?.state;
+	$: text = $data?.activities.find((a) => a.type === 4)?.state;
 
+	$: status =$data?.activities.find((a) => a.type !== 4);
 	$: app = $data?.activities.find((a) => a.type !== 4)?.name?.toLowerCase();
 	$: activity = $data?.activities.find((a) => a.type !== 4)?.details?.toLowerCase();
 	$: details = $data?.activities.find((a) => a.type !== 4)?.state?.toLowerCase();
@@ -67,7 +69,7 @@
 						{/if}
 					</div>
 					<div class="flex gap-2 items-center">
-						{#if $data?.activities.find((a) => a.type === 4)}
+						{#if customStatus}
 							{#if emoji}
 								<img
 									src={'https://cdn.discordapp.com/emojis/' + emoji}
@@ -77,24 +79,30 @@
 								/>
 							{/if}
 							<span class="line-clamp-1 break-all">
-								{customStatus}
+								{text}
 							</span>
 						{/if}
 					</div>
-					{#if $data?.activities.find((a) => a.type !== 4)}
+					{#if status}
 						<div class="flex gap-2 items-center">
 							<p class="font-bold">
-								{app}
+								<span class="line-clamp-1 break-all max-w-xs">
+									{app}
+								</span>
 							</p>
 							{#if activity}
 								<p>&middot;</p>
 								<p>
-									{activity}
+									<span class="line-clamp-1 break-all max-w-sm">
+										{activity}
+									</span>
 								</p>
 							{/if}
 							<p class="opacity-50">
 								{#if details}
-									{details}
+									<span class="line-clamp-1 break-all max-w-xs">
+										{details}
+									</span>
 								{/if}
 							</p>
 						</div>
