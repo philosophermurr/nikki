@@ -16,7 +16,7 @@
 <body class="px-10 max-w-4xl mx-auto">
 	<h1 class="mt-10">nikki &gt; you</h1>
 	{#if $data}
-		<div class="w-max bg-black bg-opacity-20 rounded-full pr-16">
+		<div class="w-max bg-black bg-opacity-30 rounded-full pr-16">
 			<table class="mt-10">
 				<tr class="flex gap-7 items-center">
 					<td>
