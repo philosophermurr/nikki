@@ -49,16 +49,23 @@
 								class={`absolute top-24 right-1 w-4 h-4 md:w-6 md:h-6 rounded-full ring-[6px] md:ring-6 ring-black ${getStatusColor(
 									$data.discord_status
 								)} group flex justify-center`}
-							>
-							</div>
+							/>
 						</div>
 					</td>
 					<td>
 						<div class="flex gap-2 items-center">
-							<h5>elon</h5>
-							<h5 class="opacity-50 font-normal">
-								{$data.discord_user.username}
-							</h5>
+							{#if $data.discord_user.display_name}
+								<h5>
+									{$data.discord_user.display_name}
+								</h5>
+								<h5 class="opacity-50 font-normal">
+									{$data.discord_user.username}
+								</h5>
+							{:else}
+								<h5>
+									{$data.discord_user.username}
+								</h5>
+							{/if}
 						</div>
 						<div class="flex gap-2 items-center">
 							{#if $data?.activities.find((a) => a.type === 4)}
