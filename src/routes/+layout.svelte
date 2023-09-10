@@ -7,28 +7,25 @@
 </script>
 
 <div class="bg-black bg-opacity-70 backdrop-blur-md pt-10 px-10 sticky top-0 z-10">
-	<!-- <div class="max-w-4xl mx-auto"> -->
-		<nav class="flex">
-			<NavItem href="/" strict>
-				<div class="flex gap-2 items-center">
-					<Home />
-					home
-				</div>
-			</NavItem>
-			<NavItem href="/about">
-				<div class="flex gap-2 items-center">
-					<Info />
-					about
-				</div>
-			</NavItem>
-			<NavItem href="/kpop">
-				<div class="flex gap-2 items-center">
-					<Music />
-					kpop
-				</div>
-			</NavItem>
-		</nav>
-	<!-- </div> -->
+	<nav class="flex">
+		<NavItem href="/" strict>
+			<div class="flex gap-2 items-center">
+				<Home />
+				home
+			</div>
+		</NavItem>
+		<NavItem href="/about">
+			<div class="flex gap-2 items-center">
+				<Info />
+				about
+			</div>
+		</NavItem>
+		<NavItem href="/kpop">
+			<div class="flex gap-2 items-center">
+				<Music />
+				kpop
+			</div>
+		</NavItem>
+	</nav>
 </div>
-<!-- <hr class="opacity-50" /> -->
 <slot />
