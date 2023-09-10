@@ -8,9 +8,9 @@
 	$: emoji = $data?.activities.find((a) => a.type === 4)?.emoji?.id;
 	$: customStatus = $data?.activities.find((a) => a.type === 4)?.state;
 
-	$: app = $data?.activities.find((a) => a.type !== 4)?.name;
-	$: activity = $data?.activities.find((a) => a.type !== 4)?.details;
-	$: details = $data?.activities.find((a) => a.type !== 4)?.state;
+	$: app = $data?.activities.find((a) => a.type !== 4)?.name.toLowerCase();
+	$: activity = $data?.activities.find((a) => a.type !== 4)?.details?.toLowerCase();
+	$: details = $data?.activities.find((a) => a.type !== 4)?.state?.toLowerCase();
 
 	const statusColors: Record<string, string> = {
 		online: 'bg-emerald-500',
