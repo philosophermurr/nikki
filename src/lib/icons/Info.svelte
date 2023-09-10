@@ -1,9 +1,14 @@
 <svg
 	xmlns="http://www.w3.org/2000/svg"
+	fill="none"
 	viewBox="0 0 24 24"
-    fill="currentColor"
-    class="w-4 h-4"
-	><path
-		d="M12 2C6.486 2 2 6.486 2 12s4.486 10 10 10 10-4.486 10-10S17.514 2 12 2zm0 18c-4.411 0-8-3.589-8-8s3.589-8 8-8 8 3.589 8 8-3.589 8-8 8z"
-	/><path d="M11 11h2v6h-2zm0-4h2v2h-2z" /></svg
+	stroke-width="1.5"
+	stroke="currentColor"
+	class="w-5 h-5"
 >
+	<path
+		stroke-linecap="round"
+		stroke-linejoin="round"
+		d="M11.25 11.25l.041-.02a.75.75 0 011.063.852l-.708 2.836a.75.75 0 001.063.853l.041-.021M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-9-3.75h.008v.008H12V8.25z"
+	/>
+</svg>
