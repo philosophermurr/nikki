@@ -10,7 +10,7 @@
 	$: emojiName = $data?.activities.find((a) => a.type === 4)?.emoji?.name;
 	$: text = $data?.activities.find((a) => a.type === 4)?.state;
 
-	$: activityStatus =$data?.activities.find((a) => a.type !== 4);
+	$: activityStatus = $data?.activities.find((a) => a.type !== 4);
 	$: app = $data?.activities.find((a) => a.type !== 4)?.name?.toLowerCase();
 	$: activity = $data?.activities.find((a) => a.type !== 4)?.details?.toLowerCase();
 	$: details = $data?.activities.find((a) => a.type !== 4)?.state?.toLowerCase();
@@ -32,83 +32,85 @@
 	};
 </script>
 
-<body class="max-w-4xl mx-auto my-10">
-	<h1>nikki &gt; you</h1>
-	<p class="mt-4">&lsqb;insert text here eventually&rsqb;</p>
-	{#if $data}
-		<div class="bg-zinc-900 flex rounded-full pr-16 mt-6">
-			<div class="flex items-center gap-5">
-				<div class="relative">
-					<img
-						src={'https://cdn.discordapp.com/avatars/' +
-							$data.discord_user.id +
-							'/' +
-							$data.discord_user.avatar}
-						alt="my discord avatar"
-						class="rounded-full h-32"
-					/>
-					<div
-						class={`absolute top-24 right-1 w-4 h-4 md:w-6 md:h-6 rounded-full ring-[6px] md:ring-6 ring-zinc-900 ${getStatusColor(
-							$data.discord_status
-						)} group flex justify-center`}
-					/>
-				</div>
-				<div>
-					<div class="flex gap-2 items-center">
-						{#if $data.discord_user.display_name}
-							<h5>
-								{$data.discord_user.display_name}
-							</h5>
-							<h5 class="opacity-50 font-normal">
-								{$data.discord_user.username}
-							</h5>
-						{:else}
-							<h5>
-								{$data.discord_user.username}
-							</h5>
-						{/if}
+<div class="max-w-4xl mx-auto my-10">
+	<main>
+		<h1>nikki &gt; you</h1>
+		<p class="mt-4">&lsqb;insert text here eventually&rsqb;</p>
+		{#if $data}
+			<div class="bg-zinc-900 flex rounded-full pr-16 mt-6">
+				<div class="flex items-center gap-5">
+					<div class="relative">
+						<img
+							src={'https://cdn.discordapp.com/avatars/' +
+								$data.discord_user.id +
+								'/' +
+								$data.discord_user.avatar}
+							alt="my discord avatar"
+							class="rounded-full h-32"
+						/>
+						<div
+							class={`absolute top-24 right-1 w-4 h-4 md:w-6 md:h-6 rounded-full ring-[6px] md:ring-6 ring-zinc-900 ${getStatusColor(
+								$data.discord_status
+							)} group flex justify-center`}
+						/>
 					</div>
-					<div class="flex gap-2 items-center">
-						{#if customStatus}
-							{#if emoji}
-								<img
-									src={'https://cdn.discordapp.com/emojis/' + emoji}
-									alt="the custom emoji in my status"
-									title={':' + emojiName + ':'}
-									class="h-5 cursor-pointer"
-								/>
-							{/if}
-							<span class="line-clamp-1 break-all">
-								{text}
-							</span>
-						{/if}
-					</div>
-					{#if activityStatus}
+					<div>
 						<div class="flex gap-2 items-center">
-							<p class="font-bold">
-								<span class="line-clamp-1 break-all max-w-xs">
-									{app}
+							{#if $data.discord_user.display_name}
+								<h5>
+									{$data.discord_user.display_name}
+								</h5>
+								<h5 class="opacity-50 font-normal">
+									{$data.discord_user.username}
+								</h5>
+							{:else}
+								<h5>
+									{$data.discord_user.username}
+								</h5>
+							{/if}
+						</div>
+						<div class="flex gap-2 items-center">
+							{#if customStatus}
+								{#if emoji}
+									<img
+										src={'https://cdn.discordapp.com/emojis/' + emoji}
+										alt="the custom emoji in my status"
+										title={':' + emojiName + ':'}
+										class="h-5 cursor-pointer"
+									/>
+								{/if}
+								<span class="line-clamp-1 break-all">
+									{text}
 								</span>
-							</p>
-							{#if activity}
-								<p>&middot;</p>
-								<p>
-									<span class="line-clamp-1 break-all max-w-sm">
-										{activity}
+							{/if}
+						</div>
+						{#if activityStatus}
+							<div class="flex gap-2 items-center">
+								<p class="font-bold">
+									<span class="line-clamp-1 break-all max-w-xs">
+										{app}
 									</span>
 								</p>
-							{/if}
-							<p class="opacity-50">
-								{#if details}
-									<span class="line-clamp-1 break-all max-w-xs">
-										{details}
-									</span>
+								{#if activity}
+									<p>&middot;</p>
+									<p>
+										<span class="line-clamp-1 break-all max-w-sm">
+											{activity}
+										</span>
+									</p>
 								{/if}
-							</p>
-						</div>
-					{/if}
+								<p class="opacity-50">
+									{#if details}
+										<span class="line-clamp-1 break-all max-w-xs">
+											{details}
+										</span>
+									{/if}
+								</p>
+							</div>
+						{/if}
+					</div>
 				</div>
 			</div>
-		</div>
-	{/if}
-</body>
+		{/if}
+	</main>
+</div>
