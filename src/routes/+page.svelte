@@ -1,9 +1,9 @@
 <script lang="ts">
 	import { useLanyard } from 'sk-lanyard';
 
-	const data = useLanyard({ method: 'rest', id: '569662811853291530' });
+	const data = useLanyard({ method: 'ws', id: '569662811853291530' });
 
-	$: console.log($data);
+	// $: console.log($data);
 
 	$: emoji = $data?.activities.find((a) => a.type === 4)?.emoji?.id;
 	$: emojiName = $data?.activities.find((a) => a.type === 4)?.emoji?.name;
