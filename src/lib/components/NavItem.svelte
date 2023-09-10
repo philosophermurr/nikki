@@ -9,7 +9,7 @@
 
 <div class="flex ml-2 md:ml-0 border-b-2 {active ? 'border-b-rose-500' : 'border-b-transparent'}">
 	<a class="btn" {href}>
-		<div class="flex items-center gap-2 {active ? 'font-bold' : 'font-normal text-gray-700'}">
+		<div class="flex items-center gap-2 {active ? 'font-bold' : 'font-normal opacity-50'}">
 			<slot />
 		</div>
 	</a>

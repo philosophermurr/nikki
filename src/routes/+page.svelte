@@ -1,13 +1,13 @@
 <script>
-	import GitHub from '$lib/icons/GitHub.svelte';
-	import Instagram from '$lib/icons/Instagram.svelte';
-	import Spotify from '$lib/icons/Spotify.svelte';
-	import X from '$lib/icons/X.svelte';
+	// import GitHub from '$lib/icons/GitHub.svelte';
+	// import Instagram from '$lib/icons/Instagram.svelte';
+	// import Spotify from '$lib/icons/Spotify.svelte';
+	// import X from '$lib/icons/X.svelte';
 </script>
 
-<body>
-	<h1 class="mt-6">nikki!</h1>
-	<div class="flex gap-1 items-center">
+<body class="px-10">
+	<h1 class="mt-6">nikki! 🎉</h1>
+	<!-- <div class="flex gap-1 items-center">
 		<a href="https://x.com/eanuliambru" target="_blank" class="opacity-40">
 			<X />
 		</a>
@@ -24,6 +24,6 @@
 		>
 			<Spotify />
 		</a>
-	</div>
+	</div> -->
 	<p>i'm nikki!</p>
 </body>

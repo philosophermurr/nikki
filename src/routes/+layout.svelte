@@ -5,19 +5,21 @@
 	import '../app.postcss';
 </script>
 
-<nav class="flex">
-	<NavItem href="/" strict>
-		<div class="flex gap-2 items-center">
-			<Home />
-			home
-		</div>
-	</NavItem>
-	<NavItem href="/about">
-        <div class="flex gap-2 items-center">
-			<Info />
-			about
-		</div>
-    </NavItem>
-</nav>
-<hr />
+<div class="bg-black bg-opacity-20 pt-10 px-10">
+	<nav class="flex">
+		<NavItem href="/" strict>
+			<div class="flex gap-2 items-center">
+				<Home />
+				home
+			</div>
+		</NavItem>
+		<NavItem href="/about">
+			<div class="flex gap-2 items-center">
+				<Info />
+				about
+			</div>
+		</NavItem>
+	</nav>
+</div>
+<!-- <hr class="opacity-50" /> -->
 <slot />

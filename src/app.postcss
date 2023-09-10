@@ -6,13 +6,17 @@
 
 @layer base {
     html {
-        font-family: 'Lexend', sans-serif;
-        @apply max-w-4xl mx-auto mt-24;
+        font-family: 'SF Pro Text', sans-serif;
+        @apply bg-stone-900 text-white text-xl;
+    }
+    nav {
+        font-family: 'SF Pro Rounded', sans-serif;
     }
     h1 {
-        @apply text-6xl font-bold text-rose-500;
+        font-family: 'SF Pro Rounded', sans-serif;
+        @apply text-5xl font-bold text-rose-500;
     }
     .btn {
-        @apply rounded-xl hover:bg-rose-50 p-1 px-3 mb-1 transition-all;
+        @apply rounded-xl hover:bg-rose-500 hover:bg-opacity-20 p-1 px-3 mb-1 transition-all;
     }
 }
