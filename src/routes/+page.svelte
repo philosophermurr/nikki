@@ -1,7 +1,7 @@
 <script lang="ts">
 	import { useLanyard } from 'sk-lanyard';
 
-	const data = useLanyard({method: 'rest', id: '569662811853291530'});
+	const data = useLanyard({ method: 'rest', id: '569662811853291530' });
 
 	$: console.log($data);
 
@@ -38,11 +38,13 @@
 						</div>
 						<div class="flex gap-2 items-center">
 							{#if $data?.activities.find((a) => a.type === 4)}
-								<img
-									src={'https://cdn.discordapp.com/emojis/' + emoji}
-									alt="the custom emoji in my status"
-									class="h-6"
-								/>
+								{#if emoji}
+									<img
+										src={'https://cdn.discordapp.com/emojis/' + emoji}
+										alt="the custom emoji in my status"
+										class="h-6"
+									/>
+								{/if}
 								{customStatus}
 							{/if}
 						</div>
