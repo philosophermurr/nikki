@@ -24,7 +24,7 @@
 			<NavItem href="/kpop">
 				<div class="flex gap-2 items-center">
 					<Music />
-					about
+					kpop
 				</div>
 			</NavItem>
 		</nav>
