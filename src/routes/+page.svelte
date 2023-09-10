@@ -73,7 +73,9 @@
 									class="h-5"
 								/>
 							{/if}
-							{customStatus}
+							<span class="line-clamp-1 break-all">
+								{customStatus}
+							</span>
 						{/if}
 					</div>
 					{#if $data?.activities.find((a) => a.type === 2)}
