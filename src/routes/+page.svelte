@@ -48,7 +48,9 @@
 									{activity}
 								</p>
 								<p class="opacity-50">
-									{details}
+									{#if details}
+										{details}
+									{/if}
 								</p>
 							</div>
 						{/if}
