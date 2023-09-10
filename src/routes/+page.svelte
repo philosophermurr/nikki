@@ -98,6 +98,6 @@
 			</div>
 		</div>
 	{:else}
-		<p>Waiting to fetch Discord data...</p>
+		<p class="mt-10">Waiting to fetch Discord data...</p>
 	{/if}
 </body>
