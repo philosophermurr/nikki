@@ -11,6 +11,22 @@
 	$: app = $data?.activities.find((a) => a.type !== 4)?.name;
 	$: activity = $data?.activities.find((a) => a.type !== 4)?.details;
 	$: details = $data?.activities.find((a) => a.type !== 4)?.state;
+
+	const statusColors: Record<string, string> = {
+		online: 'bg-emerald-500',
+		idle: 'bg-amber-400',
+		dnd: 'bg-rose-400'
+	};
+
+	const getStatusColor = (status: string) => {
+		if (!status) return 'bg-gray-400';
+
+		const str = statusColors[status];
+
+		if (!str) return 'bg-gray-400';
+
+		return str;
+	};
 </script>
 
 <body class="px-10 max-w-4xl mx-auto">
@@ -20,14 +36,22 @@
 			<table class="mt-10">
 				<tr class="flex gap-7 items-center">
 					<td>
-						<img
-							src={'https://cdn.discordapp.com/avatars/' +
-								$data.discord_user.id +
-								'/' +
-								$data.discord_user.avatar}
-							alt="my discord avatar"
-							class="rounded-full h-32"
-						/>
+						<div class="relative">
+							<img
+								src={'https://cdn.discordapp.com/avatars/' +
+									$data.discord_user.id +
+									'/' +
+									$data.discord_user.avatar}
+								alt="my discord avatar"
+								class="rounded-full h-32"
+							/>
+							<div
+								class={`absolute top-24 right-1 w-4 h-4 md:w-6 md:h-6 rounded-full ring-[6px] md:ring-6 ring-black ${getStatusColor(
+									$data.discord_status
+								)} group flex justify-center`}
+							>
+							</div>
+						</div>
 					</td>
 					<td>
 						<div class="flex gap-2 items-center">
