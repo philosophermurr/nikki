@@ -4,4 +4,10 @@
 
 <body class="px-10 max-w-4xl mx-auto">
 	<h1 class="mt-10">error {$page.status}: {$page.error?.message.toLowerCase()}</h1>
+	<p>
+		try going back <a
+			href="/"
+			class="text-rose-500 hover:text-rose-400 hover:font-bold transition-all">home</a
+		>?
+	</p>
 </body>
