@@ -5,6 +5,7 @@
 
 	$: console.log($data);
 
+	$: emoji = $data?.activities.find((a) => a.type === 4)?.emoji?.id;
 	$: customStatus = $data?.activities.find((a) => a.type === 4)?.state;
 
 	$: app = $data?.activities.find((a) => a.type !== 4)?.name;
@@ -15,7 +16,7 @@
 <body class="px-10 max-w-4xl mx-auto">
 	<h1 class="mt-10">nikki &gt; you</h1>
 	{#if $data}
-		<div class="w-max bg-black bg-opacity-10 rounded-full pr-16">
+		<div class="w-max bg-black bg-opacity-20 rounded-full pr-16">
 			<table class="mt-10">
 				<tr class="flex gap-7 items-center">
 					<td>
@@ -24,7 +25,7 @@
 								$data.discord_user.id +
 								'/' +
 								$data.discord_user.avatar}
-							alt="my discord avatar."
+							alt="my discord avatar"
 							class="rounded-full h-32"
 						/>
 					</td>
@@ -35,9 +36,16 @@
 								{$data.discord_user.username}
 							</h5>
 						</div>
-						<p>
-							{customStatus}
-						</p>
+						<div class="flex gap-2 items-center">
+							{#if $data?.activities.find((a) => a.type === 4)}
+								<img
+									src={'https://cdn.discordapp.com/emojis/' + emoji}
+									alt="the custom emoji in my status"
+									class="h-6"
+								/>
+								{customStatus}
+							{/if}
+						</div>
 						{#if $data?.activities.find((a) => a.type === 2)}
 							<div class="flex gap-2 items-center">
 								<p class="font-bold">
