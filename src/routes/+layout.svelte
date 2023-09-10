@@ -5,7 +5,7 @@
 	import '../app.postcss';
 </script>
 
-<div class="bg-black pt-10 px-10">
+<div class="bg-black bg-opacity-70 backdrop-blur-md pt-10 px-10 sticky top-0 z-10">
 	<!-- <div class="max-w-4xl mx-auto"> -->
 		<nav class="flex">
 			<NavItem href="/" strict>
