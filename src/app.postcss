@@ -5,45 +5,56 @@
 @tailwind utilities;
 
 @layer base {
-    html {
-        font-family: 'SF Pro Text', sans-serif;
-        @apply bg-zinc-950 text-white text-xl;
-    }
-    body {
-        animation-name: fade-in;
-		animation-duration: 0.7s;
-    }
-    nav {
-        font-family: 'SF Pro Rounded', sans-serif;
-    }
-    h1, h2, h3, h4, h5, h6 {
-        font-family: 'SF Pro Rounded', sans-serif;
-        @apply font-bold;
-    }
-    h1 {
-        @apply text-5xl;
-    }
-    h2 {
-        @apply text-4xl;
-    }
-    h3 {
-        @apply text-3xl;
-    }
-    h4 {
-        @apply text-2xl;
-    }
-    h5 {
-        @apply text-xl;
-    }
-    h6 {
-        @apply text-lg;
+	html {
+		font-family: 'SF Pro Text', sans-serif;
+		@apply bg-zinc-950 text-white text-xl;
+	}
+    body > * {
+		animation-name: fade-in;
+        animation-duration: 700ms;
+	}
+	nav {
+		font-family: 'SF Pro Rounded', sans-serif;
+	}
+	h1,
+	h2,
+	h3,
+	h4,
+	h5,
+	h6 {
+		font-family: 'SF Pro Rounded', sans-serif;
+		@apply font-bold;
+	}
+	h1 {
+		@apply text-5xl;
+	}
+	h2 {
+		@apply text-4xl;
+	}
+	h3 {
+		@apply text-3xl;
+	}
+	h4 {
+		@apply text-2xl;
+	}
+	h5 {
+		@apply text-xl;
+	}
+	h6 {
+		@apply text-lg;
+	}
+
+	.btn {
+		@apply rounded-xl hover:bg-rose-500 hover:bg-opacity-20 p-1 px-3 mb-1 transition-all;
+	}
+
+    @each i in 1, 2, 3, 4, 5, 6, 7, 8, 9 {
+        body > *:nth-child($(i)) {
+            animation-delay: calc($(i) * 100ms);
+        }
     }
 
-    .btn {
-        @apply rounded-xl hover:bg-rose-500 hover:bg-opacity-20 p-1 px-3 mb-1 transition-all;
-    }
-
-    @keyframes fade-in {
+	@keyframes fade-in {
 		from {
 			opacity: 0;
 			transform: translateY(0.5rem);
