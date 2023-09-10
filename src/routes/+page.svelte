@@ -10,7 +10,7 @@
 	$: emojiName = $data?.activities.find((a) => a.type === 4)?.emoji?.name;
 	$: text = $data?.activities.find((a) => a.type === 4)?.state;
 
-	$: status =$data?.activities.find((a) => a.type !== 4);
+	$: activityStatus =$data?.activities.find((a) => a.type !== 4);
 	$: app = $data?.activities.find((a) => a.type !== 4)?.name?.toLowerCase();
 	$: activity = $data?.activities.find((a) => a.type !== 4)?.details?.toLowerCase();
 	$: details = $data?.activities.find((a) => a.type !== 4)?.state?.toLowerCase();
@@ -83,7 +83,7 @@
 							</span>
 						{/if}
 					</div>
-					{#if status}
+					{#if activityStatus}
 						<div class="flex gap-2 items-center">
 							<p class="font-bold">
 								<span class="line-clamp-1 break-all max-w-xs">
