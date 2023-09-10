@@ -6,6 +6,7 @@
 	$: console.log($data);
 
 	$: emoji = $data?.activities.find((a) => a.type === 4)?.emoji?.id;
+	$: emojiName = $data?.activities.find((a) => a.type === 4)?.emoji?.name;
 	$: customStatus = $data?.activities.find((a) => a.type === 4)?.state;
 
 	$: app = $data?.activities.find((a) => a.type !== 4)?.name.toLowerCase();
@@ -70,7 +71,8 @@
 								<img
 									src={'https://cdn.discordapp.com/emojis/' + emoji}
 									alt="the custom emoji in my status"
-									class="h-5"
+									title={':' + emojiName + ':'}
+									class="h-5 cursor-pointer"
 								/>
 							{/if}
 							<span class="line-clamp-1 break-all">
