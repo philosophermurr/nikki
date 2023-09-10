@@ -42,7 +42,7 @@
 									<img
 										src={'https://cdn.discordapp.com/emojis/' + emoji}
 										alt="the custom emoji in my status"
-										class="h-6"
+										class="h-5"
 									/>
 								{/if}
 								{customStatus}
