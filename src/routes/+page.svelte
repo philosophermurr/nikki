@@ -1,7 +1,7 @@
 <script lang="ts">
-	import { useLanyard } from 'svelte-lanyard';
+	import { useLanyard } from 'sk-lanyard';
 
-	const data = useLanyard('569662811853291530');
+	const data = useLanyard({method: 'rest', id: '569662811853291530'});
 
 	$: console.log($data);
 
