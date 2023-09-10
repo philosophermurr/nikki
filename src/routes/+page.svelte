@@ -32,8 +32,9 @@
 
 <body class="max-w-4xl mx-auto my-10">
 	<h1>nikki &gt; you</h1>
+	<p class="mt-4">&lsqb;insert text here eventually&rsqb;</p>
 	{#if $data}
-		<div class="bg-zinc-900 flex rounded-full pr-16 mt-10">
+		<div class="bg-zinc-900 flex rounded-full pr-16 mt-6">
 			<div class="flex items-center gap-5">
 				<div class="relative">
 					<img
