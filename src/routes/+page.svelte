@@ -45,8 +45,8 @@
 								$data.discord_user.id +
 								'/' +
 								$data.discord_user.avatar}
-							alt="my discord avatar"
-							class="rounded-full h-32 w-32"
+							alt=""
+							class="rounded-full h-32 w-32 bg=zinc-800"
 						/>
 						<div
 							class={`absolute top-24 right-1 w-4 h-4 md:w-6 md:h-6 rounded-full ring-[6px] md:ring-6 ring-zinc-900 ${getStatusColor(
@@ -74,7 +74,7 @@
 								{#if emoji}
 									<img
 										src={'https://cdn.discordapp.com/emojis/' + emoji}
-										alt="the custom emoji in my status"
+										alt=""
 										title={':' + emojiName + ':'}
 										class="h-5 cursor-pointer"
 									/>
