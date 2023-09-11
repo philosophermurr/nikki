@@ -27,6 +27,7 @@
 	},
 	"type": "module",
 	"dependencies": {
+		"postcss-each": "^1.1.0",
 		"sk-lanyard": "^0.2.7",
 		"svelte-lanyard": "^1.0.2"
 	}
