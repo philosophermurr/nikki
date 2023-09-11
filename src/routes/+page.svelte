@@ -36,8 +36,8 @@
 	<main>
 		<h1>nikki &gt; you</h1>
 		<p class="mt-4">&lsqb;insert text here eventually&rsqb;</p>
-		{#if $data}
-			<div class="bg-zinc-900 flex rounded-full pr-16 mt-6">
+		<div class="bg-zinc-900 flex rounded-full pr-16 mt-6">
+			{#if $data}
 				<div class="flex items-center gap-5">
 					<div class="relative">
 						<img
@@ -46,7 +46,7 @@
 								'/' +
 								$data.discord_user.avatar}
 							alt="my discord avatar"
-							class="rounded-full h-32"
+							class="rounded-full h-32 w-32"
 						/>
 						<div
 							class={`absolute top-24 right-1 w-4 h-4 md:w-6 md:h-6 rounded-full ring-[6px] md:ring-6 ring-zinc-900 ${getStatusColor(
@@ -110,7 +110,9 @@
 						{/if}
 					</div>
 				</div>
-			</div>
-		{/if}
+			{:else}
+				<div class="h-32 w-32 rounded-full bg-zinc-800" />
+			{/if}
+		</div>
 	</main>
 </div>
