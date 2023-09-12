@@ -46,7 +46,7 @@
 								'/' +
 								$data.discord_user.avatar}
 							alt=""
-							class="rounded-full h-32 w-32 bg=zinc-800"
+							class="rounded-full h-32 w-32 bg-zinc-800"
 						/>
 						<div
 							class={`absolute top-24 right-1 w-4 h-4 md:w-6 md:h-6 rounded-full ring-[6px] md:ring-6 ring-zinc-900 ${getStatusColor(
