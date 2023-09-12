@@ -32,87 +32,83 @@
 	};
 </script>
 
-<div class="max-w-4xl mx-auto my-10">
-	<main>
-		<h1>nikki &gt; you</h1>
-		<p class="mt-4">&lsqb;insert text here eventually&rsqb;</p>
-		<div class="bg-zinc-900 flex rounded-full pr-16 mt-6">
-			{#if $data}
-				<div class="flex items-center gap-5">
-					<div class="relative">
-						<img
-							src={'https://cdn.discordapp.com/avatars/' +
-								$data.discord_user.id +
-								'/' +
-								$data.discord_user.avatar}
-							alt=""
-							class="rounded-full h-32 w-32 bg-zinc-800"
-						/>
-						<div
-							class={`absolute top-24 right-1 w-4 h-4 md:w-6 md:h-6 rounded-full ring-[6px] md:ring-6 ring-zinc-900 ${getStatusColor(
-								$data.discord_status
-							)} group flex justify-center`}
-						/>
-					</div>
-					<div>
-						<div class="flex gap-2 items-center">
-							{#if $data.discord_user.display_name}
-								<h5>
-									{$data.discord_user.display_name}
-								</h5>
-								<h5 class="opacity-50 font-normal">
-									{$data.discord_user.username}
-								</h5>
-							{:else}
-								<h5>
-									{$data.discord_user.username}
-								</h5>
-							{/if}
-						</div>
-						<div class="flex gap-2 items-center">
-							{#if customStatus}
-								{#if emoji}
-									<img
-										src={'https://cdn.discordapp.com/emojis/' + emoji}
-										alt=""
-										title={':' + emojiName + ':'}
-										class="h-5 cursor-pointer"
-									/>
-								{/if}
-								<span class="line-clamp-1 break-all">
-									{text}
+<h1>nikki &gt; you</h1>
+<p class="mt-4">&lsqb;insert text here eventually&rsqb;</p>
+<div class="bg-zinc-900 flex rounded-full pr-16 mt-6">
+	{#if $data}
+		<div class="flex items-center gap-5">
+			<div class="relative">
+				<img
+					src={'https://cdn.discordapp.com/avatars/' +
+						$data.discord_user.id +
+						'/' +
+						$data.discord_user.avatar}
+					alt=""
+					class="rounded-full h-32 w-32 bg-zinc-800"
+				/>
+				<div
+					class={`absolute top-24 right-1 w-4 h-4 md:w-6 md:h-6 rounded-full ring-[6px] md:ring-6 ring-zinc-900 ${getStatusColor(
+						$data.discord_status
+					)} group flex justify-center`}
+				/>
+			</div>
+			<div>
+				<div class="flex gap-2 items-center">
+					{#if $data.discord_user.display_name}
+						<h5>
+							{$data.discord_user.display_name}
+						</h5>
+						<h5 class="opacity-50 font-normal">
+							{$data.discord_user.username}
+						</h5>
+					{:else}
+						<h5>
+							{$data.discord_user.username}
+						</h5>
+					{/if}
+				</div>
+				<div class="flex gap-2 items-center">
+					{#if customStatus}
+						{#if emoji}
+							<img
+								src={'https://cdn.discordapp.com/emojis/' + emoji}
+								alt=""
+								title={':' + emojiName + ':'}
+								class="h-5 cursor-pointer"
+							/>
+						{/if}
+						<span class="line-clamp-1 break-all">
+							{text}
+						</span>
+					{/if}
+				</div>
+				{#if activityStatus}
+					<div class="flex gap-2 items-center">
+						<p class="font-bold">
+							<span class="line-clamp-1 break-all max-w-xs">
+								{app}
+							</span>
+						</p>
+						{#if activity}
+							<p>&middot;</p>
+							<p>
+								<span class="line-clamp-1 break-all max-w-sm">
+									{activity}
+								</span>
+							</p>
+						{/if}
+						<p class="opacity-50">
+							{#if details}
+								<span class="line-clamp-1 break-all max-w-xs">
+									{details}
 								</span>
 							{/if}
-						</div>
-						{#if activityStatus}
-							<div class="flex gap-2 items-center">
-								<p class="font-bold">
-									<span class="line-clamp-1 break-all max-w-xs">
-										{app}
-									</span>
-								</p>
-								{#if activity}
-									<p>&middot;</p>
-									<p>
-										<span class="line-clamp-1 break-all max-w-sm">
-											{activity}
-										</span>
-									</p>
-								{/if}
-								<p class="opacity-50">
-									{#if details}
-										<span class="line-clamp-1 break-all max-w-xs">
-											{details}
-										</span>
-									{/if}
-								</p>
-							</div>
-						{/if}
+						</p>
 					</div>
-				</div>
-			{:else}
-				<div class="h-32 w-32 rounded-full bg-zinc-800" />
-			{/if}
+				{/if}
+			</div>
 		</div>
-	</main>
+	{:else}
+		<div class="h-32 w-32 rounded-full bg-zinc-800" />
+	{/if}
 </div>
