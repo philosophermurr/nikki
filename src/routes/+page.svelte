@@ -3,8 +3,6 @@
 
 	const data = useLanyard({ method: 'ws', id: '569662811853291530' });
 
-	$: console.log($data);
-
 	$: customStatus = $data?.activities.find((a) => a.type === 4);
 	$: emoji = $data?.activities.find((a) => a.type === 4)?.emoji?.id;
 	$: emojiName = $data?.activities.find((a) => a.type === 4)?.emoji?.name;
@@ -44,7 +42,7 @@
 						'/' +
 						$data.discord_user.avatar}
 					alt=""
-					class="rounded-full h-32 w-32 bg-zinc-800"
+					class="rounded-full h-32 w-32 bg-zinc-800 shrink-0"
 				/>
 				<div
 					class={`absolute top-24 right-1 w-4 h-4 md:w-6 md:h-6 rounded-full ring-[6px] md:ring-6 ring-zinc-900 ${getStatusColor(
