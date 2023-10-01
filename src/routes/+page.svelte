@@ -35,14 +35,14 @@
 <div class="bg-zinc-900 flex rounded-full pr-16 mt-6">
 	{#if $data}
 		<div class="flex items-center gap-5">
-			<div class="relative">
+			<div class="relative shrink-0">
 				<img
 					src={'https://cdn.discordapp.com/avatars/' +
 						$data.discord_user.id +
 						'/' +
 						$data.discord_user.avatar}
 					alt=""
-					class="rounded-full h-32 w-32 bg-zinc-800 shrink-0"
+					class="rounded-full h-32 w-32 bg-zinc-800"
 				/>
 				<div
 					class={`absolute top-24 right-1 w-4 h-4 md:w-6 md:h-6 rounded-full ring-[6px] md:ring-6 ring-zinc-900 ${getStatusColor(
