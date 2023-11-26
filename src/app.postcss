@@ -1,12 +1,151 @@
-@import url('https://fonts.googleapis.com/css2?family=Lexend:wght@100;200;300;400;500;600;700;800;900&display=swap');
-
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
+@font-face{
+    font-family: 'Fira Sans';
+    src: url('fonts/FiraSans-Hair.woff2');
+    font-weight: 100;
+    font-style: normal;
+}
+
+@font-face{
+    font-family: 'Fira Sans';
+    src: url('fonts/FiraSans-HairItalic.woff2');
+    font-weight: 100;
+    font-style: italic;
+}
+
+@font-face{
+    font-family: 'Fira Sans';
+    src: url('fonts/FiraSans-UltraLight.woff2');
+    font-weight: 200;
+    font-style: normal;
+}
+
+@font-face{
+    font-family: 'Fira Sans';
+    src: url('fonts/FiraSans-UltraLightItalic.woff2');
+    font-weight: 200;
+    font-style: italic;
+}
+
+@font-face{
+    font-family: 'Fira Sans';
+    src: url('fonts/FiraSans-Light.woff2');
+    font-weight: 300;
+    font-style: normal;
+}
+
+@font-face{
+    font-family: 'Fira Sans';
+    src: url('fonts/FiraSans-LightItalic.woff2');
+    font-weight: 300;
+    font-style: italic;
+}
+
+@font-face{
+    font-family: 'Fira Sans';
+    src: url('fonts/FiraSans-Regular.woff2');
+    font-weight: 400;
+    font-style: normal;
+}
+
+@font-face{
+    font-family: 'Fira Sans';
+    src: url('fonts/FiraSans-Italic.woff2');
+    font-weight: 400;
+    font-style: italic;
+}
+
+@font-face{
+    font-family: 'Fira Sans';
+    src: url('fonts/FiraSans-Medium.woff2');
+    font-weight: 500;
+    font-style: normal;
+}
+
+@font-face{
+    font-family: 'Fira Sans';
+    src: url('fonts/FiraSans-MediumItalic.woff2');
+    font-weight: 500;
+    font-style: italic;
+}
+
+@font-face{
+    font-family: 'Fira Sans';
+    src: url('fonts/FiraSans-SemiBold.woff2');
+    font-weight: 600;
+    font-style: normal;
+}
+
+@font-face{
+    font-family: 'Fira Sans';
+    src: url('fonts/FiraSans-SemiBoldItalic.woff2');
+    font-weight: 600;
+    font-style: italic;
+}
+
+@font-face{
+    font-family: 'Fira Sans';
+    src: url('fonts/FiraSans-Bold.woff2');
+    font-weight: 700;
+    font-style: normal;
+}
+
+@font-face{
+    font-family: 'Fira Sans';
+    src: url('fonts/FiraSans-BoldItalic.woff2');
+    font-weight: 700;
+    font-style: italic;
+}
+
+@font-face{
+    font-family: 'Fira Sans';
+    src: url('fonts/FiraSans-ExtraBold.woff2');
+    font-weight: 800;
+    font-style: normal;
+}
+
+@font-face{
+    font-family: 'Fira Sans';
+    src: url('fonts/FiraSans-ExtraBoldItalic.woff2');
+    font-weight: 800;
+    font-style: italic;
+}
+
+@font-face{
+    font-family: 'Fira Sans';
+    src: url('fonts/FiraSans-Heavy.woff2');
+    font-weight: 900;
+    font-style: normal;
+}
+
+@font-face{
+    font-family: 'Fira Sans';
+    src: url('fonts/FiraSans-HeavyItalic.woff2');
+    font-weight: 900;
+    font-style: italic;
+}
+
+
+@font-face{
+    font-family: 'Fira Mono';
+    src: url('fonts/FiraMono-Regular.woff2');
+    font-weight: 400;
+    font-style: normal;
+}
+
+@font-face{
+    font-family: 'Fira Mono';
+    src: url('fonts/FiraMono-Bold.woff2');
+    font-weight: 600;
+    font-style: normal;
+}
+
 @layer base {
 	html {
-		font-family: 'SF Pro Text', sans-serif;
+		font-family: 'Fira Sans', sans-serif;
 		@apply bg-zinc-950 text-white text-xl;
 	}
     main > * {
@@ -14,20 +153,13 @@
         animation-duration: 700ms;
         animation-fill-mode: both;
 	}
-	nav {
-		font-family: 'SF Pro Rounded', sans-serif;
-	}
 	h1,
 	h2,
 	h3,
 	h4,
 	h5,
-	h6 {
-		font-family: 'SF Pro Rounded', sans-serif;
-		@apply font-bold;
-	}
 	h1 {
-		@apply text-5xl;
+		@apply text-5xl font-bold;
 	}
 	h2 {
 		@apply text-4xl;
