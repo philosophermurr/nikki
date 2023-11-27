@@ -29,7 +29,7 @@
 
 <h1>nikki &gt; you</h1>
 <p class="mt-4">&lsqb;insert text here eventually&rsqb;</p>
-<div class="bg-zinc-900 flex rounded-full pr-16 mt-6">
+<div class="bg-zinc-900 flex rounded-full pr-8 mt-6">
 	{#if $data}
 		<div class="flex items-center gap-5">
 			<div class="relative shrink-0">
@@ -39,27 +39,27 @@
 						'/' +
 						$data.discord_user.avatar}
 					alt=""
-					class="rounded-full h-32 w-32 bg-zinc-800"
+					class="rounded-full w-20 h-20 md:h-32 md:w-32 bg-zinc-800"
 				/>
 				<div
-					class={`absolute top-24 right-1 w-4 h-4 md:w-6 md:h-6 rounded-full ring-[6px] md:ring-6 ring-zinc-900 ${getStatusColor(
+					class={`absolute bottom-1 right-1 w-4 h-4 md:w-6 md:h-6 rounded-full ring-[6px] md:ring-6 ring-zinc-900 ${getStatusColor(
 						$data.discord_status
 					)} group flex justify-center`}
 				/>
 			</div>
 			<div>
-				<div class="flex gap-2 items-center">
+				<div class="line-clamp-1 break-all text-lg text-zinc-500">
 					{#if $data.discord_user.display_name}
-						<h5>
+						<span class="font-bold text-white">
 							{$data.discord_user.display_name}
-						</h5>
-						<h5 class="opacity-50 font-normal">
+						</span>
+						<span class="font-normal">
 							{$data.discord_user.username}
-						</h5>
+						</span>
 					{:else}
-						<h5>
+						<span class="font-bold">
 							{$data.discord_user.username}
-						</h5>
+						</span>
 					{/if}
 				</div>
 				<div class="flex gap-2 items-center">

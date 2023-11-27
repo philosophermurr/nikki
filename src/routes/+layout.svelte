@@ -6,8 +6,8 @@
 	import '../app.postcss';
 </script>
 
-<div class="bg-black bg-opacity-70 backdrop-blur-md pt-10 px-10 sticky top-0 z-10">
-	<nav class="flex">
+<div class="bg-black bg-opacity-70 backdrop-blur-md pt-10 md:px-10 sticky top-0 z-10">
+	<nav class="flex overflow-x-auto">
 		<NavItem href="/" strict>
 			<div class="flex gap-2 items-center">
 				<Home />
@@ -20,10 +20,10 @@
 				about
 			</div>
 		</NavItem>
-		<NavItem href="/kpop">
+		<NavItem href="/music">
 			<div class="flex gap-2 items-center">
 				<Music />
-				kpop
+				music
 			</div>
 		</NavItem>
 	</nav>
