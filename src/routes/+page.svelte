@@ -4,9 +4,6 @@
 	const data = useLanyard({ method: 'ws', id: '569662811853291530' });
 
 	$: customStatus = $data?.activities.find((a) => a.type === 4);
-	$: emoji = $data?.activities.find((a) => a.type === 4)?.emoji?.id;
-	$: emojiName = $data?.activities.find((a) => a.type === 4)?.emoji?.name;
-	$: text = $data?.activities.find((a) => a.type === 4)?.state;
 
 	$: activityStatus = $data?.activities.find((a) => a.type !== 4);
 	$: app = $data?.activities.find((a) => a.type !== 4)?.name?.toLowerCase();
@@ -67,16 +64,20 @@
 				</div>
 				<div class="flex gap-2 items-center">
 					{#if customStatus}
-						{#if emoji}
+						{@const { emoji } = customStatus}
+
+						{#if emoji?.id}
 							<img
-								src={'https://cdn.discordapp.com/emojis/' + emoji}
+								src={'https://cdn.discordapp.com/emojis/' + emoji.id}
 								alt=""
-								title={':' + emojiName + ':'}
+								title={':' + emoji.name +':'}
 								class="h-5 cursor-pointer"
 							/>
+						{:else if emoji?.name}
+							{emoji.name}
 						{/if}
 						<span class="line-clamp-1 break-all">
-							{text}
+							{customStatus.state}
 						</span>
 					{/if}
 				</div>
