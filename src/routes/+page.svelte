@@ -50,10 +50,10 @@
 			<div>
 				<div class="line-clamp-1 break-all text-lg text-zinc-500">
 					{#if $data.discord_user.display_name}
-						<span class="font-bold text-white">
+						<span class="font-bold text-white title">
 							{$data.discord_user.display_name}
 						</span>
-						<span class="font-normal">
+						<span class="italic">
 							{$data.discord_user.username}
 						</span>
 					{:else}
@@ -83,7 +83,7 @@
 				</div>
 				{#if activityStatus}
 					<div class="flex gap-2 items-center">
-						<p class="font-bold">
+						<p class="font-bold title text-base">
 							<span class="line-clamp-1 break-all max-w-xs">
 								{app}
 							</span>
@@ -96,9 +96,9 @@
 								</span>
 							</p>
 						{/if}
-						<p class="opacity-50">
+						<p class="text-zinc-500">
 							{#if details}
-								<span class="line-clamp-1 break-all max-w-xs">
+								<span class="line-clamp-1 break-all max-w-xs italic">
 									{details}
 								</span>
 							{/if}
