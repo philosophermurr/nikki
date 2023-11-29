@@ -76,9 +76,11 @@
 						{:else if emoji?.name}
 							{emoji.name}
 						{/if}
-						<span class="line-clamp-1 break-all">
-							{customStatus.state}
-						</span>
+						{#if customStatus.state}
+							<span class="line-clamp-1 break-all">
+								{customStatus.state}
+							</span>
+						{/if}
 					{/if}
 				</div>
 				{#if activityStatus}
