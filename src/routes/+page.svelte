@@ -48,18 +48,18 @@
 				/>
 			</div>
 			<div>
-				<div class="line-clamp-1 break-all text-lg text-zinc-500">
+				<div class="line-clamp-1 break-all text-lg text-zinc-500 flex gap-2 items-baseline">
 					{#if $data.discord_user.display_name}
-						<span class="font-bold text-white title">
+						<h4 class="font-bold text-white">
 							{$data.discord_user.display_name}
-						</span>
-						<span class="italic">
+						</h4>
+						<p class="italic">
 							{$data.discord_user.username}
-						</span>
+						</p>
 					{:else}
-						<span class="font-bold">
+						<h4 class="font-bold">
 							{$data.discord_user.username}
-						</span>
+						</h4>
 					{/if}
 				</div>
 				<div class="flex gap-2 items-center">
@@ -70,7 +70,7 @@
 							<img
 								src={'https://cdn.discordapp.com/emojis/' + emoji.id}
 								alt=""
-								title={':' + emoji.name +':'}
+								title={':' + emoji.name + ':'}
 								class="h-5 cursor-pointer"
 							/>
 						{:else if emoji?.name}
@@ -84,25 +84,19 @@
 					{/if}
 				</div>
 				{#if activityStatus}
-					<div class="flex gap-2 items-center">
-						<p class="font-bold title text-base">
-							<span class="line-clamp-1 break-all max-w-xs">
-								{app}
-							</span>
-						</p>
+					<div class="flex gap-2 items-baseline">
+						<h5 class="line-clamp-1 break-all max-w-xs">
+							{app}
+						</h5>
 						{#if activity}
 							<p>&middot;</p>
-							<p>
-								<span class="line-clamp-1 break-all max-w-sm">
-									{activity}
-								</span>
+							<p class="line-clamp-1 break-all max-w-sm">
+								{activity}
 							</p>
 						{/if}
-						<p class="text-zinc-500">
+						<p class="text-zinc-500 line-clamp-1 break-all max-w-xs italic">
 							{#if details}
-								<span class="line-clamp-1 break-all max-w-xs italic">
-									{details}
-								</span>
+								{details}
 							{/if}
 						</p>
 					</div>
